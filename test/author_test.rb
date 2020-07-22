@@ -12,11 +12,17 @@ class Authorest < MiniTest::Test
     assert_instance_of Author, author1
   end
 
-  def test_it_exists
+  def test_it_has_name
     charlotte_bronte = Author.new({first_name: "Charlotte", last_name: "Bronte"})
 
-    assert_equal charlotte_bronte.first_name, "Charlotte"
+    assert_equal charlotte_bronte.name, "Charlotte Bronte"
   end
+
+  # def test_it_has_first_name
+  #   charlotte_bronte = Author.new({first_name: "Charlotte", last_name: "Bronte"})
+  #
+  #   assert_equal charlotte_bronte.first_name, "Charlotte"
+  # end
 
 
 end
