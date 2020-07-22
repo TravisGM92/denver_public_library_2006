@@ -21,4 +21,10 @@ class Booktest < MiniTest::Test
 
     assert_equal "Lee", book1.author_last_name
   end
+
+  def test_it_has_a_title
+    book1 = Book.new({author_first_name: "Harper", author_last_name: "Lee", title: "To Kill a Mockingbird", publication_date: "July 11, 1960"})
+
+    assert_equal "To Kill A Mockingbird", book1.title
+  end
 end
