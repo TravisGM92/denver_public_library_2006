@@ -1,14 +1,15 @@
 class Library
 
-  attr_reader :name, :books, :authors
+  attr_reader :name, :books, :authors, :checedkout_books
   def initialize(name)
     @name = name
     @books = []
     @authors = []
+    @checkedout_books = []
   end
 
   def add_author(author)
-    authors << author
+    @authors << author
     @authors.each{ |a| books << a.books}
     books.flatten!.uniq!
   end
@@ -28,7 +29,12 @@ class Library
   end
 
   def checkout(book)
-    books.include?book
+    if @books.include? book
+      @checkedout_books << book
+      true
+    else
+      false
+    end
   end
 
 end
