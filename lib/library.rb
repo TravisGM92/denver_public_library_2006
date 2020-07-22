@@ -1,11 +1,13 @@
 class Library
 
-  attr_reader :name, :books, :authors, :checked_out_books
+  attr_reader :name, :books, :authors, :checked_out_books,
+              :number_loaned
   def initialize(name)
     @name = name
     @books = []
     @authors = []
     @checked_out_books = []
+    @number_loaned = 0
   end
 
   def add_author(author)
@@ -31,10 +33,26 @@ class Library
   def checkout(book)
     if @books.include? book
       @checked_out_books << book
+      @number_loaned += 1
       true
     else
       false
     end
   end
+
+  def return(book)
+    if @checked_out_books.include? book
+      @checked_out_books.delete(book)
+      @books << book
+    else
+      "Error"
+    end
+  end
+
+  def most_popular_book
+
+
+  end
+
 
 end
