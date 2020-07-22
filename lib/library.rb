@@ -11,7 +11,6 @@ class Library
     authors << author
     @authors.each{ |a| books << a.books}
     books.flatten!.uniq!
-
   end
 
 end
