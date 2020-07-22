@@ -18,6 +18,18 @@ class Authortest < MiniTest::Test
     assert_equal charlotte_bronte.name, "Charlotte Bronte"
   end
 
+  def test_it_has_a_first_name
+    charlotte_bronte = Author.new({first_name: "Charlotte", last_name: "Bronte"})
+
+    assert_equal charlotte_bronte.first_name, "Charlotte"
+  end
+
+  def test_it_has_a_last_name
+    charlotte_bronte = Author.new({first_name: "Charlotte", last_name: "Bronte"})
+
+    assert_equal charlotte_bronte.last_name, "Bronte"
+  end
+
   def test_it_has_no_books
     charlotte_bronte = Author.new({first_name: "Charlotte", last_name: "Bronte"})
 
