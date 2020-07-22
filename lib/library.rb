@@ -7,4 +7,9 @@ class Library
     @authors = []
   end
 
+  def add_author(author)
+
+
+  end
+
 end
