@@ -2,6 +2,8 @@ require "minitest/autorun"
 require "minitest/pride"
 require "./lib/author"
 require "./lib/book"
+require "./lib/library"
+
 
 
 class Librarytest < MiniTest::Test
@@ -10,5 +12,11 @@ class Librarytest < MiniTest::Test
     dpl = Library.new("Denver Public Library")
 
     assert_instance_of Library, dpl
+  end
+
+  def test_it_has_a_name
+    dpl = Library.new("Denver Public Library")
+
+    assert_equal "Denver Public Library", dpl.name
   end
 end
