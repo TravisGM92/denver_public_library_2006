@@ -27,4 +27,8 @@ class Library
     hash
   end
 
+  def checkout(book)
+    books.include?book
+  end
+
 end

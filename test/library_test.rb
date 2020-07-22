@@ -106,5 +106,8 @@ class Librarytest < MiniTest::Test
     # dpl.add_author(harper_lee)
 
     assert_equal false, dpl.checkout(mockingbird)
+    dpl.add_author(charlotte_bronte)
+    dpl.add_author(harper_lee)
+        assert_equal true, dpl.checkout(mockingbird)
   end
 end
