@@ -19,4 +19,10 @@ class Librarytest < MiniTest::Test
 
     assert_equal "Denver Public Library", dpl.name
   end
+
+  def test_it_has_no_books
+    dpl = Library.new("Denver Public Library")
+
+    assert_equal [], dpl.books
+  end
 end
