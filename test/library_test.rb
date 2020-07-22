@@ -169,9 +169,12 @@ class Librarytest < MiniTest::Test
     dpl.add_author(harper_lee)
     dpl.checkout(mockingbird)
     dpl.return(mockingbird)
+    dpl.checkout(villette)
+    dpl.return(villette)
+    dpl.checkout(villette)
 
 
 
-    assert_equal [], dpl.checked_out_books
+    assert_equal villette, dpl.most_popular_book
   end
 end

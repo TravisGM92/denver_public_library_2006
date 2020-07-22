@@ -1,13 +1,13 @@
+require './lib/book'
 class Library
 
-  attr_reader :name, :books, :authors, :checked_out_books,
-              :number_loaned
+  attr_reader :name, :books, :authors, :checked_out_books
+
   def initialize(name)
     @name = name
     @books = []
     @authors = []
     @checked_out_books = []
-    @number_loaned = 0
   end
 
   def add_author(author)
@@ -33,7 +33,7 @@ class Library
   def checkout(book)
     if @books.include? book
       @checked_out_books << book
-      @number_loaned += 1
+      book.number_loaned += 1
       true
     else
       false
@@ -50,8 +50,7 @@ class Library
   end
 
   def most_popular_book
-
-
+    @books.sort_by{ |book| book.number_loaned}.last
   end
 
 
