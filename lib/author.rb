@@ -9,10 +9,8 @@ class Author
   end
 
   def write(title, year)
-    # book1 = Book.new({author_first_name: "Harper", author_last_name: "Lee", title: "To Kill a Mockingbird", publication_date: "July 11, 1960"})
-
-
-
+    books << Book.new({author_first_name: "#{self.name[0]}", author_last_name: "#{self.name[1]}", title: "#{title}", publication_date: "#{year}"})
+    books[-1]
   end
 
 end

@@ -26,9 +26,11 @@ class Authorest < MiniTest::Test
 
   def test_it_can_write
     charlotte_bronte = Author.new({first_name: "Charlotte", last_name: "Bronte"})
-    
+
     jane_eyre = charlotte_bronte.write("Jane Eyre", "October 16, 1847")
-    assert_equal charlotte_bronte.books, []
+    new_book = charlotte_bronte.write("Villette", "1853")
+
+    assert_equal charlotte_bronte.books, [jane_eyre, new_book]
   end
 
 
