@@ -13,4 +13,18 @@ class Library
     books.flatten!.uniq!
   end
 
+  def publication_time_frame_for(author)
+    hash = {}
+    years = author.books.map do |book|
+      if book.publication_date.length > 4
+        book.publication_date[-4..-1]
+      else
+        book.publication_date
+      end
+    end
+    hash[:start] = years.min
+    hash[:end] = years.max
+    hash
+  end
+
 end
