@@ -122,4 +122,20 @@ class Librarytest < MiniTest::Test
 
     assert_equal true, dpl.checkout(mockingbird)
   end
+
+  def test_it_can_display_checked_out_books
+    dpl = Library.new("Denver Public Library")
+    charlotte_bronte = Author.new({first_name: "Charlotte", last_name: "Bronte"})
+    book1 = charlotte_bronte.write("Jane Eyre", "October 16, 1847")
+    professor = charlotte_bronte.write("The Professor", "1857")
+    villette = charlotte_bronte.write("Villette", "1853")
+    harper_lee = Author.new({first_name: "Harper", last_name: "Lee"})
+    mockingbird = harper_lee.write("To Kill a Mockingbird", "July 11, 1960")
+    dpl.add_author(charlotte_bronte)
+    dpl.add_author(harper_lee)
+    dpl.checkout(mockingbird)
+
+
+    assert_equal [mockingbird], dpl.checked_out_books
+  end
 end
