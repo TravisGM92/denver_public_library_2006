@@ -1,10 +1,9 @@
 class Author
 
-  attr_reader :info, :name, :books,
+  attr_reader :name, :books,
               :first_name, :last_name
 
   def initialize(info)
-    @info = {}
     @name = "#{info[:first_name]} " + "#{info[:last_name]}"
     @books = []
     @first_name = info[:first_name]
